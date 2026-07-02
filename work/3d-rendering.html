@@ -311,6 +311,7 @@ img{display:block;max-width:100%;height:auto}
 <div class="gallery-item"><img alt="P-51 Mustang Blender render" loading="lazy" src="../img/p51-mustang-blender-3d-render-paul-danowski-visual-design.png"/><span class="gallery-caption">P-51 Mustang</span></div>
 <div class="gallery-item"><img alt="1969 Camaro SS Blender render" loading="lazy" src="../img/1969-camaro-ss-blender-3d-render-paul-danowski-visual-design.png"/><span class="gallery-caption">'69 Camaro SS</span></div>
 <div class="gallery-item"><img alt="Warehouse distribution facility 3D render" loading="lazy" src="../img/warehouse-distribution-facility-design.jpg"/><span class="gallery-caption">Warehouse Distribution Facility</span></div>
+<div class="gallery-item"><img alt="Fender Stratocaster Blender render" loading="lazy" src="../img/fender-stratocaster-2.jpg"/><span class="gallery-caption">Fender Stratocaster</span></div>
 </div>
 </div>
 <footer>
@@ -328,6 +329,15 @@ img{display:block;max-width:100%;height:auto}
 (function(){
   var nav=document.getElementById('nav');
   window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40);},{passive:true});
+})();
+</script>
+<script>
+(function(){
+  var img=new URLSearchParams(location.search).get('img');
+  if(img&&/^[\w.-]+\.(jpg|jpeg|png|webp|svg)$/i.test(img)){
+    var el=document.querySelector('.info-img img');
+    if(el)el.src='../img/'+img;
+  }
 })();
 </script>
 <script>

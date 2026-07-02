@@ -332,6 +332,15 @@ img{display:block;max-width:100%;height:auto}
 </script>
 <script>
 (function(){
+  var img=new URLSearchParams(location.search).get('img');
+  if(img&&/^[\w.-]+\.(jpg|jpeg|png|webp|svg)$/i.test(img)){
+    var el=document.querySelector('.info-img img');
+    if(el)el.src='../img/'+img;
+  }
+})();
+</script>
+<script>
+(function(){
   if(!window.matchMedia('(prefers-reduced-motion:no-preference)').matches)return;
   var b=document.body;
   // Read direction set by the page we came from

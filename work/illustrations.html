@@ -312,7 +312,7 @@ img{display:block;max-width:100%;height:auto}
 <div class="gallery-item"><img alt="Prince digital portrait" loading="lazy" src="../img/prince-digital-portrait-illustration-paul-danowski-artist.png"/><span class="gallery-caption">Prince</span></div>
 <div class="gallery-item"><img alt="Layne Staley digital portrait" loading="lazy" src="../img/layne-staley-digital-portrait-illustration-paul-danowski.png"/><span class="gallery-caption">Layne Staley</span></div>
 <div class="gallery-item"><img alt="Christopher Walken low-poly portrait" loading="lazy" src="../img/christopher-walken-low-poly-vector-portrait-illustration-paul-danowski.png"/><span class="gallery-caption">Christopher Walken — Low Poly</span></div>
-<div class="gallery-item"><img alt="Mako shark low-poly vector illustration" loading="lazy" src="../img/great-white-shark-low-poly-vector-illustration-paul-danowski.png"/><span class="gallery-caption">Mako Shark — Low Poly</span></div>
+<div class="gallery-item"><img alt="Mako shark low-poly vector illustration" loading="lazy" src="../img/mako-shark-low-poly-vector-illustration-paul-danowski.png"/><span class="gallery-caption">Mako Shark — Low Poly</span></div>
 <div class="gallery-item"><img alt="Phillie Phanatic digital painting" loading="lazy" src="../img/phillie-phanatic-digital-painting-illustration-philadelphia-paul-danowski.png"/><span class="gallery-caption">Phillie Phanatic</span></div>
 <div class="gallery-item"><img alt="Devil Baby character illustration" loading="lazy" src="../img/devil-baby-cartoon-character-illustration-paul-danowski-south-jersey.png"/><span class="gallery-caption">Devil Baby</span></div>
 <div class="gallery-item"><img alt="Brian Dawkins digital portrait" loading="lazy" src="../img/brian-dawkins-philadelphia-eagles.jpg"/><span class="gallery-caption">Brian Dawkins</span></div>
@@ -321,6 +321,10 @@ img{display:block;max-width:100%;height:auto}
 <div class="gallery-item"><img alt="John Lydon digital portrait" loading="lazy" src="../img/john-lydon-sex-pistols.jpg"/><span class="gallery-caption">John Lydon</span></div>
 <div class="gallery-item"><img alt="Snoop Dogg digital portrait" loading="lazy" src="../img/snoopdogg.jpg"/><span class="gallery-caption">Snoop Dogg</span></div>
 <div class="gallery-item"><img alt="Marla digital portrait" loading="lazy" src="../img/marla.jpg"/><span class="gallery-caption">Marla</span></div>
+<div class="gallery-item"><img alt="Entrada Guy digital portrait" loading="lazy" src="../img/entrada-guy.jpg"/><span class="gallery-caption">Entrada Guy</span></div>
+<div class="gallery-item"><img alt="Entrada Guy on the couch" loading="lazy" src="../img/entrada-guy-on-couch.jpg"/><span class="gallery-caption">Entrada Guy — Couch</span></div>
+<div class="gallery-item"><img alt="Allen Iverson and Kobe Bryant digital portrait" loading="lazy" src="../img/iverson-bryant.jpg"/><span class="gallery-caption">Iverson & Bryant</span></div>
+<div class="gallery-item"><img alt="Bill the Butcher digital portrait" loading="lazy" src="../img/bill-the-butcher.jpg"/><span class="gallery-caption">Bill the Butcher</span></div>
 </div>
 </div>
 <footer>
@@ -338,6 +342,15 @@ img{display:block;max-width:100%;height:auto}
 (function(){
   var nav=document.getElementById('nav');
   window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40);},{passive:true});
+})();
+</script>
+<script>
+(function(){
+  var img=new URLSearchParams(location.search).get('img');
+  if(img&&/^[\w.-]+\.(jpg|jpeg|png|webp|svg)$/i.test(img)){
+    var el=document.querySelector('.info-img img');
+    if(el)el.src='../img/'+img;
+  }
 })();
 </script>
 <script>
