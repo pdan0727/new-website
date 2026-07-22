@@ -33,7 +33,7 @@
   --font-mono:'Space Mono',monospace;--nav-h:90px;
 }
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--bone);font-family:var(--font-body);
+body{position:relative;z-index:0;background:var(--bg);color:var(--bone);font-family:var(--font-body);
   font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%;height:auto}
@@ -65,7 +65,7 @@ img{display:block;max-width:100%;height:auto}
 
 /* ── Accent Header ── */
 .project-header{
-  position:relative;
+  position:relative;z-index:0;overflow:hidden;
   padding-top:var(--nav-h,90px);
   background:var(--bg);
 }
@@ -263,24 +263,61 @@ img{display:block;max-width:100%;height:auto}
   .gallery-grid.cols-2,.gallery-grid.cols-3{grid-template-columns:1fr}
   .project-title{font-size:2rem}
 }
+.beams{position:absolute;inset:0;pointer-events:none;z-index:-2;overflow:hidden}
+.beam{position:absolute;top:-30%;height:160%;width:200px;background:linear-gradient(180deg,rgba(201,168,76,0) 0%,rgba(201,168,76,.14) 45%,rgba(201,168,76,.14) 55%,rgba(201,168,76,0) 100%);filter:blur(34px);mix-blend-mode:screen;opacity:.55;transform:rotate(var(--brot,12deg));animation:beamsway var(--bdur,34s) ease-in-out infinite alternate;animation-delay:var(--bdelay,0s)}
+@keyframes beamsway{0%{transform:rotate(var(--brot,12deg)) translateX(0)}100%{transform:rotate(var(--brot,12deg)) translateX(var(--bshift,60px))}}
+.particles{position:absolute;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
+.p{position:absolute;bottom:-10px;width:5px;height:5px;background:var(--gold);transform:rotate(45deg);opacity:0;animation-name:pfloat;animation-duration:var(--dur,18s);animation-delay:var(--delay,0s);animation-timing-function:ease-in;animation-iteration-count:infinite;animation-fill-mode:both}
+@keyframes pfloat{0%{transform:rotate(45deg) translateY(0) translateX(0);opacity:0}5%{opacity:var(--op,.18)}85%{opacity:var(--op,.18)}100%{transform:rotate(45deg) translateY(-110vh) translateX(var(--drift,20px));opacity:0}}
+@media(prefers-reduced-motion:reduce){.particles{display:none!important}.beams{display:none!important}}
+.lightbox-overlay{
+  display:none;position:fixed;inset:0;z-index:999;
+  background:rgba(0,0,0,.92);
+  align-items:center;justify-content:center;
+  cursor:zoom-out;padding:40px;
+}
+.lightbox-overlay.active{display:flex}
+.lightbox-overlay img{
+  max-width:90vw;max-height:90vh;
+  object-fit:contain;
+}
 </style>
 </head>
 <body>
+<div class="particles" aria-hidden="true">
+<span class="p" style="left:5%;--dur:22s;--delay:0s;--op:.45;--drift:15px;width:5px;height:5px"></span>
+<span class="p" style="left:12%;--dur:18s;--delay:3s;--op:.30;--drift:-10px;width:4px;height:4px"></span>
+<span class="p" style="left:21%;--dur:25s;--delay:1.5s;--op:.55;--drift:25px;width:6px;height:6px"></span>
+<span class="p" style="left:30%;--dur:20s;--delay:7s;--op:.35;--drift:-18px;width:4px;height:4px"></span>
+<span class="p" style="left:38%;--dur:27s;--delay:4s;--op:.40;--drift:12px;width:5px;height:5px"></span>
+<span class="p" style="left:47%;--dur:19s;--delay:9s;--op:.28;--drift:-22px;width:4px;height:4px"></span>
+<span class="p" style="left:55%;--dur:23s;--delay:2s;--op:.50;--drift:18px;width:6px;height:6px"></span>
+<span class="p" style="left:63%;--dur:21s;--delay:6s;--op:.38;--drift:-14px;width:5px;height:5px"></span>
+<span class="p" style="left:71%;--dur:26s;--delay:0.5s;--op:.32;--drift:20px;width:4px;height:4px"></span>
+<span class="p" style="left:79%;--dur:18s;--delay:11s;--op:.48;--drift:-8px;width:5px;height:5px"></span>
+<span class="p" style="left:87%;--dur:24s;--delay:5s;--op:.42;--drift:16px;width:6px;height:6px"></span>
+<span class="p" style="left:93%;--dur:20s;--delay:8s;--op:.30;--drift:-20px;width:4px;height:4px"></span>
+</div>
 <nav aria-label="Main navigation" id="nav">
 <div class="nav-inner">
 <a aria-label="Paul Danowski Visual Design" class="nav-logo-wrap" href="../danowski-portfolio.html">
-<img src="../img/PDWordMark_white.svg" alt="Paul Danowski Visual Design" style="height:32px;width:auto;display:block" />
+<img src="../img/PDWordMark_white.svg" alt="Paul Danowski Visual Design" style="height:60px;width:auto;display:block" />
 </a>
 <ul class="nav-links">
 <li><a href="../danowski-portfolio.html#work">Work</a></li>
 <li><a href="../danowski-portfolio.html#about">About</a></li>
 <li><a href="../danowski-portfolio.html#services">Services</a></li>
+<li><a href="../resume.html">Résumé</a></li>
 <li><a href="../danowski-portfolio.html#contact">Contact</a></li>
 </ul>
 <div class="nav-right"><a class="nav-cta" href="../danowski-portfolio.html#contact">Hire Me</a></div>
 </div>
 </nav>
 <div class="project-header">
+<div class="beams" aria-hidden="true">
+<div class="beam" style="left:16%;--brot:12deg;--bdur:34s;--bshift:55px;--bdelay:0s"></div>
+<div class="beam" style="left:68%;--brot:-10deg;--bdur:40s;--bshift:-60px;--bdelay:5s"></div>
+</div>
 <div class="header-inner">
 <div class="header-left">
 <p class="header-eyebrow">3D / Blender</p>
@@ -312,6 +349,10 @@ img{display:block;max-width:100%;height:auto}
 <div class="gallery-item"><img alt="1969 Camaro SS Blender render" loading="lazy" src="../img/1969-camaro-ss-blender-3d-render-paul-danowski-visual-design.png"/><span class="gallery-caption">'69 Camaro SS</span></div>
 <div class="gallery-item"><img alt="Warehouse distribution facility 3D render" loading="lazy" src="../img/warehouse-distribution-facility-design.jpg"/><span class="gallery-caption">Warehouse Distribution Facility</span></div>
 <div class="gallery-item"><img alt="Fender Stratocaster Blender render" loading="lazy" src="../img/fender-stratocaster-2.jpg"/><span class="gallery-caption">Fender Stratocaster</span></div>
+<div class="gallery-item"><img alt="Home office 3D render, full color" loading="lazy" src="../img/office-full-color.jpg"/><span class="gallery-caption">Home Office — Full Color</span></div>
+<div class="gallery-item"><img alt="Home office 3D render, clay no-color pass" loading="lazy" src="../img/office-no-color.jpg"/><span class="gallery-caption">Home Office — No Color</span></div>
+<div class="gallery-item"><img alt="Hank Scorpio 3D character render" loading="lazy" src="../img/hank-scorpio.jpg"/><span class="gallery-caption">Hank Scorpio</span></div>
+<div class="gallery-item"><img alt="Lionel Hutz 3D character render" loading="lazy" src="../img/lionel-hutz.jpg"/><span class="gallery-caption">Lionel Hutz</span></div>
 </div>
 </div>
 <footer>
@@ -351,6 +392,7 @@ img{display:block;max-width:100%;height:auto}
   b.style.transform='translateX('+(dir==='next'?'160px':'-160px')+')';
   requestAnimationFrame(function(){requestAnimationFrame(function(){
     b.style.cssText+=';transition:opacity .42s cubic-bezier(0.16,1,0.3,1),transform .42s cubic-bezier(0.16,1,0.3,1);opacity:1;transform:translateX(0)';
+    setTimeout(function(){b.style.transform='';},450);
   })});
   // Exit: slide out left (next) or right (prev), store direction for the incoming page
   document.querySelectorAll('.proj-nav-btn').forEach(function(a){
@@ -363,6 +405,22 @@ img{display:block;max-width:100%;height:auto}
     });
   });
 })();
+</script>
+<div class="lightbox-overlay" id="lightbox">
+  <img id="lightbox-img" src="" alt="">
+</div>
+<script>
+document.querySelectorAll('.gallery-item img, .info-img img').forEach(img => {
+  img.style.cursor = 'zoom-in';
+  img.addEventListener('click', () => {
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox-img').alt = img.alt;
+    document.getElementById('lightbox').classList.add('active');
+  });
+});
+document.getElementById('lightbox').addEventListener('click', () => {
+  document.getElementById('lightbox').classList.remove('active');
+});
 </script>
 </body>
 </html>

@@ -242,9 +242,9 @@ a{text-decoration:none;color:inherit}
 .nav-right{display:flex;justify-content:flex-end}
 .nav-cta{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.35);padding:10px 22px;transition:var(--tr);white-space:nowrap}
 .nav-cta:hover{background:rgba(201,168,76,.08);border-color:var(--gold)}
-#hero{min-height:100vh;background:var(--dark-bg);display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding:calc(var(--nav-h) + 60px) 32px 80px}
+#hero{min-height:100vh;background:var(--dark-bg);display:flex;flex-direction:column;justify-content:center;position:relative;z-index:0;overflow:hidden;padding:calc(var(--nav-h) + 60px) 32px 80px}
 .hero-inner{max-width:var(--max-w);margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:2}
-.hero-watermark{position:absolute;top:50%;left:-4%;transform:translateY(-50%);width:52%;pointer-events:none;z-index:1;opacity:0.3}
+.hero-watermark{position:absolute;top:50%;left:-4%;transform:translateY(-50%);width:41%;aspect-ratio:544.3/647.1;pointer-events:none;z-index:1;opacity:0.3;background-image:url(img/PDLetterMark_All_White.svg);background-repeat:no-repeat;background-position:center;background-size:contain}
 .hero-eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;display:flex;align-items:center;gap:12px}
 .hero-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
 .hero-headline{font-family:var(--font-display);font-size:clamp(3.5rem,6.5vw,6rem);font-weight:700;line-height:1.0;letter-spacing:-.025em;color:var(--bone)}
@@ -267,7 +267,7 @@ a{text-decoration:none;color:inherit}
 .d-track span{font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);opacity:.7;flex-shrink:0}
 .d-track .dot{opacity:.28}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-#about{padding:var(--sp);background:var(--dark-bg)}
+#about{padding:var(--sp);background:var(--dark-bg);position:relative;z-index:0;overflow:hidden}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;max-width:var(--max-w);margin:0 auto}
 .portrait-frame{aspect-ratio:4/5;background:var(--card);border:1px solid var(--border-gold);position:relative;overflow:hidden}
 .portrait-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:6rem;color:rgba(201,168,76,.08);letter-spacing:-.05em}
@@ -282,7 +282,7 @@ a{text-decoration:none;color:inherit}
 .skill-item{display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(240,237,230,.35)}
 .skill-item::before{content:'';width:5px;height:5px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:1}
 
-#work{padding:var(--sp);background:var(--dark-bg)}
+#work{padding:var(--sp);background:var(--dark-bg);position:relative;z-index:0;overflow:hidden}
 .sec-hdr{max-width:var(--max-w);margin:0 auto 52px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
 .sec-hdr .eyebrow{margin-bottom:10px}
 .sec-title{font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;letter-spacing:-.02em;color:var(--bone)}
@@ -310,7 +310,7 @@ a{text-decoration:none;color:inherit}
 .cl-logos{display:flex;gap:36px;align-items:center;flex-wrap:wrap}
 .cl-name{font-family:var(--font-display);font-size:1rem;color:rgba(240,237,230,.2);font-style:italic;transition:color var(--tr);cursor:default}
 .cl-name:hover{color:rgba(240,237,230,.6)}
-#services{padding:var(--sp);background:var(--card)}
+#services{padding:var(--sp);background:var(--card);position:relative;z-index:0;overflow:hidden}
 .svc-hdr{max-width:var(--max-w);margin:0 auto 52px;text-align:center}
 .svc-hdr .eyebrow{margin-bottom:12px}
 .svc-title{font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;letter-spacing:-.02em;margin-bottom:12px;color:var(--bone)}
@@ -328,7 +328,7 @@ a{text-decoration:none;color:inherit}
 .svc-list li::before{content:'';width:4px;height:4px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:1}
 .svc-price{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(240,237,230,.3)}
 .svc-price strong{font-size:1.4rem;font-family:var(--font-display);color:var(--gold);letter-spacing:-.02em;margin-right:4px;display:inline}
-#contact{padding:var(--sp);background:var(--dark-bg);position:relative;overflow:hidden}
+#contact{padding:var(--sp);background:var(--dark-bg);position:relative;z-index:0;overflow:hidden}
 #contact::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 70% 50%,rgba(201,168,76,.04) 0%,transparent 60%);pointer-events:none}
 .ct-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;position:relative;z-index:1}
 .ct-left .eyebrow{margin-bottom:14px}
@@ -357,10 +357,13 @@ footer{background:var(--card);border-top:1px solid var(--border-gold);padding:40
 .ft-links{display:flex;gap:24px;list-style:none}
 .ft-links a{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(240,237,230,.22);transition:color var(--tr)}
 .ft-links a:hover{color:var(--gold)}
-.particles{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.beams{position:absolute;inset:0;pointer-events:none;z-index:-2;overflow:hidden}
+.beam{position:absolute;top:-30%;height:160%;width:200px;background:linear-gradient(180deg,rgba(201,168,76,0) 0%,rgba(201,168,76,.14) 45%,rgba(201,168,76,.14) 55%,rgba(201,168,76,0) 100%);filter:blur(34px);mix-blend-mode:screen;opacity:.55;transform:rotate(var(--brot,12deg));animation:beamsway var(--bdur,34s) ease-in-out infinite alternate;animation-delay:var(--bdelay,0s)}
+@keyframes beamsway{0%{transform:rotate(var(--brot,12deg)) translateX(0)}100%{transform:rotate(var(--brot,12deg)) translateX(var(--bshift,60px))}}
+.particles{position:absolute;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
 .p{position:absolute;bottom:-10px;width:5px;height:5px;background:var(--gold);transform:rotate(45deg);opacity:0;animation-name:pfloat;animation-duration:var(--dur,18s);animation-delay:var(--delay,0s);animation-timing-function:ease-in;animation-iteration-count:infinite;animation-fill-mode:both}
 @keyframes pfloat{0%{transform:rotate(45deg) translateY(0) translateX(0);opacity:0}5%{opacity:var(--op,.18)}85%{opacity:var(--op,.18)}100%{transform:rotate(45deg) translateY(-110vh) translateX(var(--drift,20px));opacity:0}}
-@media(max-width:900px){.hero-inner,.about-grid,.ct-inner{grid-template-columns:1fr;gap:48px}.hero-right{display:none}.hero-watermark{position:absolute;top:50%;left:-4%;transform:translateY(-50%);width:52%;pointer-events:none;z-index:1;opacity:0.3}.work-grid{grid-template-columns:repeat(2,1fr)}.svc-grid{grid-template-columns:1fr}.sec-hdr{flex-direction:column;align-items:flex-start}.nav-links{display:none}}
+@media(max-width:900px){.hero-inner,.about-grid,.ct-inner{grid-template-columns:1fr;gap:48px}.hero-right{display:none}.hero-watermark{position:absolute;top:50%;left:-4%;transform:translateY(-50%);width:41%;aspect-ratio:544.3/647.1;pointer-events:none;z-index:1;opacity:0.3;background-image:url(img/PDLetterMark_All_White.svg);background-repeat:no-repeat;background-position:center;background-size:contain}.work-grid{grid-template-columns:repeat(2,1fr)}.svc-grid{grid-template-columns:1fr}.sec-hdr{flex-direction:column;align-items:flex-start}.nav-links{display:none}}
 @media(max-width:600px){:root{--sp:64px 20px}.work-grid{grid-template-columns:1fr}.work-card.feat{grid-column:span 1}.frow{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr}}
 </style>
 </head>
@@ -376,6 +379,7 @@ footer{background:var(--card);border-top:1px solid var(--border-gold);padding:40
       <li><a href="#work">Work</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="resume.html">Résumé</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-right"><a href="#contact" class="nav-cta">Hire Me</a></div>
@@ -384,7 +388,26 @@ footer{background:var(--card);border-top:1px solid var(--border-gold);padding:40
 
 <main id="main-content">
 <section id="hero" aria-label="Hero — Design. Build. Make.">
-  <img src="img/PDLetterMark_All_White.svg" alt="" aria-hidden="true" class="hero-watermark" />
+  <div class="beams" aria-hidden="true">
+    <div class="beam" style="left:14%;--brot:13deg;--bdur:32s;--bshift:55px;--bdelay:0s"></div>
+    <div class="beam" style="left:66%;--brot:-9deg;--bdur:40s;--bshift:-65px;--bdelay:5s"></div>
+  </div>
+  <div class="particles" aria-hidden="true">
+    <span class="p" style="left:5%;--dur:22s;--delay:0s;--op:.45;--drift:15px;width:5px;height:5px"></span>
+    <span class="p" style="left:12%;--dur:18s;--delay:3s;--op:.30;--drift:-10px;width:4px;height:4px"></span>
+    <span class="p" style="left:21%;--dur:25s;--delay:1.5s;--op:.55;--drift:25px;width:6px;height:6px"></span>
+    <span class="p" style="left:30%;--dur:20s;--delay:7s;--op:.35;--drift:-18px;width:4px;height:4px"></span>
+    <span class="p" style="left:38%;--dur:27s;--delay:4s;--op:.40;--drift:12px;width:5px;height:5px"></span>
+    <span class="p" style="left:47%;--dur:19s;--delay:9s;--op:.28;--drift:-22px;width:4px;height:4px"></span>
+    <span class="p" style="left:55%;--dur:23s;--delay:2s;--op:.50;--drift:18px;width:6px;height:6px"></span>
+    <span class="p" style="left:63%;--dur:21s;--delay:6s;--op:.38;--drift:-14px;width:5px;height:5px"></span>
+    <span class="p" style="left:71%;--dur:26s;--delay:0.5s;--op:.32;--drift:20px;width:4px;height:4px"></span>
+    <span class="p" style="left:79%;--dur:18s;--delay:11s;--op:.48;--drift:-8px;width:5px;height:5px"></span>
+    <span class="p" style="left:87%;--dur:24s;--delay:5s;--op:.42;--drift:16px;width:6px;height:6px"></span>
+    <span class="p" style="left:93%;--dur:20s;--delay:8s;--op:.30;--drift:-20px;width:4px;height:4px"></span>
+  </div>
+
+  <div class="hero-watermark" aria-hidden="true"></div>
   <div class="hero-inner">
     <div class="hero-left">
       <p class="hero-eyebrow">Paul Danowski Visual Design</p>
@@ -402,20 +425,6 @@ footer{background:var(--card);border-top:1px solid var(--border-gold);padding:40
       <a href="work/flying-through-space.html" class="hero-tile" aria-label="Flying Through Space"><div class="vt-thumb" style="background-image:url(img/flying-through-space.png)" aria-hidden="true"></div><div class="vt-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><p class="hero-tile-label">3D / Motion</p><p class="hero-tile-title">Flying Through<br>Space</p></a>
     </div>
   </div>
-  <div class="particles" aria-hidden="true">
-    <span class="p" style="left:5%;--dur:22s;--delay:0s;--op:.45;--drift:15px;width:5px;height:5px"></span>
-    <span class="p" style="left:12%;--dur:18s;--delay:3s;--op:.30;--drift:-10px;width:4px;height:4px"></span>
-    <span class="p" style="left:21%;--dur:25s;--delay:1.5s;--op:.55;--drift:25px;width:6px;height:6px"></span>
-    <span class="p" style="left:30%;--dur:20s;--delay:7s;--op:.35;--drift:-18px;width:4px;height:4px"></span>
-    <span class="p" style="left:38%;--dur:27s;--delay:4s;--op:.40;--drift:12px;width:5px;height:5px"></span>
-    <span class="p" style="left:47%;--dur:19s;--delay:9s;--op:.28;--drift:-22px;width:4px;height:4px"></span>
-    <span class="p" style="left:55%;--dur:23s;--delay:2s;--op:.50;--drift:18px;width:6px;height:6px"></span>
-    <span class="p" style="left:63%;--dur:21s;--delay:6s;--op:.38;--drift:-14px;width:5px;height:5px"></span>
-    <span class="p" style="left:71%;--dur:26s;--delay:0.5s;--op:.32;--drift:20px;width:4px;height:4px"></span>
-    <span class="p" style="left:79%;--dur:18s;--delay:11s;--op:.48;--drift:-8px;width:5px;height:5px"></span>
-    <span class="p" style="left:87%;--dur:24s;--delay:5s;--op:.42;--drift:16px;width:6px;height:6px"></span>
-    <span class="p" style="left:93%;--dur:20s;--delay:8s;--op:.30;--drift:-20px;width:4px;height:4px"></span>
-  </div>
   <div class="scroll-hint" aria-hidden="true">
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v10M3 8l5 5 5-5"/></svg>
     Scroll
@@ -430,6 +439,25 @@ footer{background:var(--card);border-top:1px solid var(--border-gold);padding:40
 </div>
 
 <section id="about" aria-label="About Paul Danowski">
+  <div class="beams" aria-hidden="true">
+    <div class="beam" style="left:8%;--brot:-11deg;--bdur:36s;--bshift:-50px;--bdelay:2s"></div>
+    <div class="beam" style="left:72%;--brot:10deg;--bdur:30s;--bshift:60px;--bdelay:7s"></div>
+  </div>
+  <div class="particles" aria-hidden="true">
+    <span class="p" style="left:5%;--dur:22s;--delay:0s;--op:.45;--drift:15px;width:5px;height:5px"></span>
+    <span class="p" style="left:12%;--dur:18s;--delay:3s;--op:.30;--drift:-10px;width:4px;height:4px"></span>
+    <span class="p" style="left:21%;--dur:25s;--delay:1.5s;--op:.55;--drift:25px;width:6px;height:6px"></span>
+    <span class="p" style="left:30%;--dur:20s;--delay:7s;--op:.35;--drift:-18px;width:4px;height:4px"></span>
+    <span class="p" style="left:38%;--dur:27s;--delay:4s;--op:.40;--drift:12px;width:5px;height:5px"></span>
+    <span class="p" style="left:47%;--dur:19s;--delay:9s;--op:.28;--drift:-22px;width:4px;height:4px"></span>
+    <span class="p" style="left:55%;--dur:23s;--delay:2s;--op:.50;--drift:18px;width:6px;height:6px"></span>
+    <span class="p" style="left:63%;--dur:21s;--delay:6s;--op:.38;--drift:-14px;width:5px;height:5px"></span>
+    <span class="p" style="left:71%;--dur:26s;--delay:0.5s;--op:.32;--drift:20px;width:4px;height:4px"></span>
+    <span class="p" style="left:79%;--dur:18s;--delay:11s;--op:.48;--drift:-8px;width:5px;height:5px"></span>
+    <span class="p" style="left:87%;--dur:24s;--delay:5s;--op:.42;--drift:16px;width:6px;height:6px"></span>
+    <span class="p" style="left:93%;--dur:20s;--delay:8s;--op:.30;--drift:-20px;width:4px;height:4px"></span>
+  </div>
+
   <div class="about-grid">
     <div style="position:relative">
       <div class="portrait-frame">
@@ -459,6 +487,25 @@ footer{background:var(--card);border-top:1px solid var(--border-gold);padding:40
 <div style="padding:0 32px;background:var(--dark-bg)"><div class="divider container"><div class="divider-diamond"></div></div></div>
 
 <section id="work" aria-label="Portfolio — Selected Work">
+  <div class="beams" aria-hidden="true">
+    <div class="beam" style="left:24%;--brot:9deg;--bdur:38s;--bshift:45px;--bdelay:1s"></div>
+    <div class="beam" style="left:80%;--brot:-12deg;--bdur:33s;--bshift:-55px;--bdelay:6s"></div>
+  </div>
+  <div class="particles" aria-hidden="true">
+    <span class="p" style="left:5%;--dur:22s;--delay:0s;--op:.45;--drift:15px;width:5px;height:5px"></span>
+    <span class="p" style="left:12%;--dur:18s;--delay:3s;--op:.30;--drift:-10px;width:4px;height:4px"></span>
+    <span class="p" style="left:21%;--dur:25s;--delay:1.5s;--op:.55;--drift:25px;width:6px;height:6px"></span>
+    <span class="p" style="left:30%;--dur:20s;--delay:7s;--op:.35;--drift:-18px;width:4px;height:4px"></span>
+    <span class="p" style="left:38%;--dur:27s;--delay:4s;--op:.40;--drift:12px;width:5px;height:5px"></span>
+    <span class="p" style="left:47%;--dur:19s;--delay:9s;--op:.28;--drift:-22px;width:4px;height:4px"></span>
+    <span class="p" style="left:55%;--dur:23s;--delay:2s;--op:.50;--drift:18px;width:6px;height:6px"></span>
+    <span class="p" style="left:63%;--dur:21s;--delay:6s;--op:.38;--drift:-14px;width:5px;height:5px"></span>
+    <span class="p" style="left:71%;--dur:26s;--delay:0.5s;--op:.32;--drift:20px;width:4px;height:4px"></span>
+    <span class="p" style="left:79%;--dur:18s;--delay:11s;--op:.48;--drift:-8px;width:5px;height:5px"></span>
+    <span class="p" style="left:87%;--dur:24s;--delay:5s;--op:.42;--drift:16px;width:6px;height:6px"></span>
+    <span class="p" style="left:93%;--dur:20s;--delay:8s;--op:.30;--drift:-20px;width:4px;height:4px"></span>
+  </div>
+
   <div class="sec-hdr">
     <div><p class="eyebrow">Selected Work</p><h2 class="sec-title">Projects &amp; Case Studies</h2></div>
     <div class="filter-tabs" role="group">
@@ -473,10 +520,10 @@ footer{background:var(--card);border-top:1px solid var(--border-gold);padding:40
     </div>
   </div>
   <div class="work-grid" id="workGrid">
-<a href="work/illustrations.html?img=smoking-caterpillar-on-mushroom.jpg" class="work-card feat-full" data-cat="illustration" aria-label="Smoking Caterpillar on Mushroom"><div class="wc-inner" style="background-image:url(img/smoking-caterpillar-on-mushroom.jpg);background-size:cover;background-position:center;"></div><div class="wc-overlay"><p class="wc-cat">Illustration / Digital</p><p class="wc-title">Smoking Caterpillar on Mushroom</p></div></a>
 <a href="work/reverse-gilded-signs.html?img=guinness-reverse-gilded-glass-sign.jpg" class="work-card" data-cat="craft" aria-label="Guinness Reverse Gilded Sign"><div class="wc-inner" style="background-image:url(img/guinness-reverse-gilded-glass-sign.jpg);background-size:cover;background-position:center;"></div><div class="wc-overlay"><p class="wc-cat">Glass Signage / Craft</p><p class="wc-title">Guinness Reverse Gilded Sign</p></div></a>
 <a href="work/reverse-gilded-signs.html?img=jameson-whiskey-reverse-gilded-glass-sign.jpg" class="work-card" data-cat="craft" aria-label="Jameson Irish Whiskey Sign"><div class="wc-inner" style="background-image:url(img/jameson-whiskey-reverse-gilded-glass-sign.jpg);background-size:cover;background-position:center;"></div><div class="wc-overlay"><p class="wc-cat">Glass Signage / Craft</p><p class="wc-title">Jameson Irish Whiskey Sign</p></div></a>
 <a href="work/3d-rendering.html?img=camaro-burnout.jpg" class="work-card" data-cat="3d" aria-label="'69 Camaro SS"><div class="wc-inner" style="background-image:url(img/camaro-burnout.jpg);background-size:cover;background-position:center;"></div><div class="wc-overlay"><p class="wc-cat">3D Rendering / Blender</p><p class="wc-title">'69 Camaro SS</p></div></a>
+<a href="work/illustrations.html?img=smoking-caterpillar-on-mushroom.jpg" class="work-card feat-full" data-cat="illustration" aria-label="Smoking Caterpillar on Mushroom"><div class="wc-inner" style="background-image:url(img/smoking-caterpillar-on-mushroom.jpg);background-size:cover;background-position:center;"></div><div class="wc-overlay"><p class="wc-cat">Illustration / Digital</p><p class="wc-title">Smoking Caterpillar on Mushroom</p></div></a>
 <a href="work/business-cards.html?img=a-tale-of-two-tails-business-card.jpg" class="work-card square" data-cat="branding" aria-label="A Tale of Two Tails Business Card"><div class="wc-inner" style="background-image:url(img/a-tale-of-two-tails-business-card.jpg);background-size:cover;background-position:center;"></div><div class="wc-overlay"><p class="wc-cat">Branding / Print</p><p class="wc-title">A Tale of Two Tails Business Card</p></div></a>
 <a href="work/business-cards.html?img=thumper-products-business-card-design.jpg" class="work-card square" data-cat="branding" aria-label="Thumper Products Business Card"><div class="wc-inner" style="background-image:url(img/thumper-products-business-card-design.jpg);background-size:cover;background-position:center;"></div><div class="wc-overlay"><p class="wc-cat">Branding / Print</p><p class="wc-title">Thumper Products Business Card</p></div></a>
 <a href="work/business-cards.html?img=mark-gullett-business-card-design.jpg" class="work-card square" data-cat="branding" aria-label="Mark Gullett Business Card"><div class="wc-inner" style="background-image:url(img/mark-gullett-business-card-design.jpg);background-size:cover;background-position:center;"></div><div class="wc-overlay"><p class="wc-cat">Branding / Print</p><p class="wc-title">Mark Gullett Business Card</p></div></a>
@@ -511,6 +558,9 @@ footer{background:var(--card);border-top:1px solid var(--border-gold);padding:40
 <a href="work/3d-rendering.html?img=p51-mustang-blender-3d-render-paul-danowski-visual-design.png" class="work-card feat" data-cat="3d" aria-label="P-51 Mustang"><div class="wc-inner" style="background-image:url(img/p51-mustang-blender-3d-render-paul-danowski-visual-design.png);background-size:cover;background-position:center;"></div><div class="wc-overlay"><p class="wc-cat">3D Rendering / Blender</p><p class="wc-title">P-51 Mustang</p></div></a>
 <a href="work/wellness-group.html" class="work-card square" data-cat="branding" aria-label="The Wellness Group"><div class="wc-inner" style="background-image:url(img/wellness-group-logo-design-healthcare-branding-new-jersey.jpg);background-size:cover;background-position:center;"></div><div class="wc-overlay"><p class="wc-cat">Branding / Logo</p><p class="wc-title">The Wellness Group</p></div></a>
 <a href="work/illustrations.html?img=christopher-walken-low-poly-vector-portrait-illustration-paul-danowski.png" class="work-card square" data-cat="illustration" aria-label="Christopher Walken"><div class="wc-inner" style="background-image:url(img/christopher-walken-low-poly-vector-portrait-illustration-paul-danowski.png);background-size:cover;background-position:center;"></div><div class="wc-overlay"><p class="wc-cat">Illustration / Low-Poly</p><p class="wc-title">Christopher Walken</p></div></a>
+<a href="work/3d-rendering.html?img=office-full-color.jpg" class="work-card wide-sm" data-cat="3d" aria-label="Home Office — Full Color"><div class="wc-inner" style="background-image:url(img/office-full-color.jpg);background-size:cover;background-position:center;"></div><div class="wc-overlay"><p class="wc-cat">3D Rendering / Blender</p><p class="wc-title">Home Office — Full Color</p></div></a>
+<a href="work/3d-rendering.html?img=office-no-color.jpg" class="work-card wide-sm" data-cat="3d" aria-label="Home Office — No Color"><div class="wc-inner" style="background-image:url(img/office-no-color.jpg);background-size:cover;background-position:center;"></div><div class="wc-overlay"><p class="wc-cat">3D Rendering / Blender</p><p class="wc-title">Home Office — No Color</p></div></a>
+<a href="work/3d-rendering.html?img=hank-scorpio.jpg" class="work-card square" data-cat="3d" aria-label="Hank Scorpio"><div class="wc-inner" style="background-image:url(img/hank-scorpio.jpg);background-size:cover;background-position:center;"></div><div class="wc-overlay"><p class="wc-cat">3D Character / Blender</p><p class="wc-title">Hank Scorpio</p></div></a>
   </div>
 </section>
 
@@ -528,6 +578,25 @@ footer{background:var(--card);border-top:1px solid var(--border-gold);padding:40
 </div>
 
 <section id="services" aria-label="Services and Pricing">
+  <div class="beams" aria-hidden="true">
+    <div class="beam" style="left:18%;--brot:-8deg;--bdur:35s;--bshift:-40px;--bdelay:3s"></div>
+    <div class="beam" style="left:60%;--brot:11deg;--bdur:29s;--bshift:50px;--bdelay:8s"></div>
+  </div>
+  <div class="particles" aria-hidden="true">
+    <span class="p" style="left:5%;--dur:22s;--delay:0s;--op:.45;--drift:15px;width:5px;height:5px"></span>
+    <span class="p" style="left:12%;--dur:18s;--delay:3s;--op:.30;--drift:-10px;width:4px;height:4px"></span>
+    <span class="p" style="left:21%;--dur:25s;--delay:1.5s;--op:.55;--drift:25px;width:6px;height:6px"></span>
+    <span class="p" style="left:30%;--dur:20s;--delay:7s;--op:.35;--drift:-18px;width:4px;height:4px"></span>
+    <span class="p" style="left:38%;--dur:27s;--delay:4s;--op:.40;--drift:12px;width:5px;height:5px"></span>
+    <span class="p" style="left:47%;--dur:19s;--delay:9s;--op:.28;--drift:-22px;width:4px;height:4px"></span>
+    <span class="p" style="left:55%;--dur:23s;--delay:2s;--op:.50;--drift:18px;width:6px;height:6px"></span>
+    <span class="p" style="left:63%;--dur:21s;--delay:6s;--op:.38;--drift:-14px;width:5px;height:5px"></span>
+    <span class="p" style="left:71%;--dur:26s;--delay:0.5s;--op:.32;--drift:20px;width:4px;height:4px"></span>
+    <span class="p" style="left:79%;--dur:18s;--delay:11s;--op:.48;--drift:-8px;width:5px;height:5px"></span>
+    <span class="p" style="left:87%;--dur:24s;--delay:5s;--op:.42;--drift:16px;width:6px;height:6px"></span>
+    <span class="p" style="left:93%;--dur:20s;--delay:8s;--op:.30;--drift:-20px;width:4px;height:4px"></span>
+  </div>
+
   <div class="svc-hdr">
     <p class="eyebrow">Services</p>
     <h2 class="svc-title">What I Can Do For You</h2>
@@ -559,6 +628,25 @@ footer{background:var(--card);border-top:1px solid var(--border-gold);padding:40
 </section>
 
 <section id="contact" aria-label="Contact Paul Danowski">
+  <div class="beams" aria-hidden="true">
+    <div class="beam" style="left:12%;--brot:10deg;--bdur:34s;--bshift:55px;--bdelay:1.5s"></div>
+    <div class="beam" style="left:70%;--brot:-10deg;--bdur:39s;--bshift:-60px;--bdelay:6.5s"></div>
+  </div>
+  <div class="particles" aria-hidden="true">
+    <span class="p" style="left:5%;--dur:22s;--delay:0s;--op:.45;--drift:15px;width:5px;height:5px"></span>
+    <span class="p" style="left:12%;--dur:18s;--delay:3s;--op:.30;--drift:-10px;width:4px;height:4px"></span>
+    <span class="p" style="left:21%;--dur:25s;--delay:1.5s;--op:.55;--drift:25px;width:6px;height:6px"></span>
+    <span class="p" style="left:30%;--dur:20s;--delay:7s;--op:.35;--drift:-18px;width:4px;height:4px"></span>
+    <span class="p" style="left:38%;--dur:27s;--delay:4s;--op:.40;--drift:12px;width:5px;height:5px"></span>
+    <span class="p" style="left:47%;--dur:19s;--delay:9s;--op:.28;--drift:-22px;width:4px;height:4px"></span>
+    <span class="p" style="left:55%;--dur:23s;--delay:2s;--op:.50;--drift:18px;width:6px;height:6px"></span>
+    <span class="p" style="left:63%;--dur:21s;--delay:6s;--op:.38;--drift:-14px;width:5px;height:5px"></span>
+    <span class="p" style="left:71%;--dur:26s;--delay:0.5s;--op:.32;--drift:20px;width:4px;height:4px"></span>
+    <span class="p" style="left:79%;--dur:18s;--delay:11s;--op:.48;--drift:-8px;width:5px;height:5px"></span>
+    <span class="p" style="left:87%;--dur:24s;--delay:5s;--op:.42;--drift:16px;width:6px;height:6px"></span>
+    <span class="p" style="left:93%;--dur:20s;--delay:8s;--op:.30;--drift:-20px;width:4px;height:4px"></span>
+  </div>
+
   <div class="ct-inner">
     <div class="ct-left">
       <p class="eyebrow">Contact</p>
@@ -602,6 +690,7 @@ footer{background:var(--card);border-top:1px solid var(--border-gold);padding:40
       <li><a href="#work">Work</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="resume.html">Résumé</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <p class="ft-copy">&copy; 2025 Paul Danowski. All rights reserved.</p>
@@ -1037,7 +1126,6 @@ tabs.forEach(t=>t.addEventListener('click',()=>{
 
 /* ─── Hero watermark: slow ambient breathe ── */
 @keyframes wm-breathe{0%,100%{opacity:0.27}50%{opacity:0.38}}
-.hero-watermark{animation:wm-breathe 7s ease-in-out infinite}
 
 /* ─── Hero radial glow: slow pulse ── */
 @keyframes hero-glow-pulse{0%,100%{opacity:0.6}50%{opacity:1}}
@@ -1110,28 +1198,13 @@ tabs.forEach(t=>t.addEventListener('click',()=>{
   .sec-title.js-reveal,.about-h.js-reveal,.ct-h.js-reveal,.svc-title.js-reveal{clip-path:none!important;transition:none!important}
   .about-right.js-reveal{opacity:1!important;transform:none!important;transition:none!important}
   #workGrid .work-card.js-reveal{transform:scale(1)!important;transition:none!important}
+  .particles{display:none!important}
+  .beams{display:none!important}
 }
 </style>
 <script>
 (function(){
   var rm=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-
-  /* ── Hero watermark mouse parallax ── */
-  var hero=document.getElementById('hero');
-  var wm=document.querySelector('.hero-watermark');
-  if(hero&&wm&&!rm){
-    hero.addEventListener('mousemove',function(e){
-      var r=hero.getBoundingClientRect();
-      var dx=((e.clientX-r.left)/r.width-0.5)*2;
-      var dy=((e.clientY-r.top)/r.height-0.5)*2;
-      wm.style.transform='translateY(calc(-50% + '+(dy*-10)+'px)) translateX('+(dx*-8)+'px)';
-    },{passive:true});
-    hero.addEventListener('mouseleave',function(){
-      wm.style.transition='transform 0.9s cubic-bezier(0.16,1,0.3,1)';
-      wm.style.transform='translateY(-50%)';
-      setTimeout(function(){wm.style.transition='';},900);
-    });
-  }
 
   /* ── Gold dividers: expand-from-center on scroll entry ── */
   var dividers=document.querySelectorAll('.divider');
