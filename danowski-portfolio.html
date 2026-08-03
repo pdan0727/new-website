@@ -213,9 +213,9 @@
 /* Font display swap already handled via media=print trick in <head> */
 
 :root{--ink:#111110;--bone:#F0EDE6;--gold:#C9A84C;--gold-dim:#8A6F2E;--gold-pale:rgba(201,168,76,0.12);--signal:#D94F2B;--mid:#7A7065;--card:#1C1B19;--card2:#222120;--dark-bg:#0E0E0C;--border-gold:rgba(201,168,76,0.14);--border-light:rgba(240,237,230,0.07);--font-display:'Playfair Display',Georgia,serif;--font-body:'Inter',system-ui,sans-serif;--font-mono:'Space Mono',monospace;--nav-h:90px;--max-w:1200px;--sp:96px 24px;--tr:0.25s ease}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:99999;opacity:.06;background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220"><filter id="g"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch" result="t"/><feColorMatrix in="t" type="saturate" values="0" result="gray"/><feColorMatrix in="gray" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1"/></filter><rect width="100%" height="100%" filter="url(%23g)"/></svg>');background-size:220px 220px;background-repeat:repeat}
 html{scroll-behavior:smooth}
-body{font-family:var(--font-body);background:var(--dark-bg);color:var(--bone);line-height:1.6;overflow-x:hidden}
+body{font-family:var(--font-body);background-color:var(--dark-bg);background-image:radial-gradient(ellipse 75% 65% at 50% 30%,rgba(201,168,76,.07) 0%,rgba(240,237,230,.03) 30%,transparent 65%);background-repeat:no-repeat;background-size:cover;background-attachment:fixed;color:var(--bone);line-height:1.6;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{text-decoration:none;color:inherit}
 .container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
@@ -344,7 +344,7 @@ a{text-decoration:none;color:inherit}
 .ct-form{display:flex;flex-direction:column;gap:14px}
 .fg{display:flex;flex-direction:column;gap:6px}
 .flabel{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(240,237,230,.25)}
-.fi,.ft{background:rgba(240,237,230,.03);border:1px solid rgba(240,237,230,.09);color:var(--bone);font-family:var(--font-body);font-size:.95rem;padding:13px 16px;outline:none;transition:border-color var(--tr);width:100%;border-radius:0;-webkit-appearance:none}
+.fi,.ft{background:rgba(240,237,230,.03);border:1px solid rgba(240,237,230,.09);color:var(--bone);font-family:var(--font-body);font-size:.95rem;padding:13px 16px;outline:none;transition:border-color var(--tr);width:100%;border-radius:0;-webkit-appearance:none;appearance:none}
 .fi::placeholder,.ft::placeholder{color:rgba(240,237,230,.14)}
 .fi:focus,.ft:focus{border-color:rgba(201,168,76,.5);background:rgba(201,168,76,.03)}
 .ft{min-height:120px;resize:vertical}
