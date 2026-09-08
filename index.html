@@ -677,7 +677,7 @@ footer{background:var(--card);border-top:1px solid var(--border-gold);padding:40
             <option>Something Else</option>
           </select>
         </div>
-        <div class="fg" id="serviceOtherGroup" hidden><label class="flabel" for="serviceOther">What did you have in mind?</label><input class="fi" type="text" id="serviceOther" name="serviceOther" placeholder="Tell me a bit more"></div>
+        <div class="fg" id="serviceOtherGroup" style="display:none"><label class="flabel" for="serviceOther">What did you have in mind?</label><input class="fi" type="text" id="serviceOther" name="serviceOther" placeholder="Tell me a bit more"></div>
         <div class="fg"><label class="flabel" for="message">Your Project</label><textarea class="ft" id="message" name="message" placeholder="What are you building? What's the timeline and budget?"></textarea></div>
         <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send Message <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 7h12M8 2l5 5-5 5"/></svg></button>
       </form>
@@ -1017,7 +1017,7 @@ tabs.forEach(t=>t.addEventListener('click',()=>{
   if(serviceSelect&&serviceOtherGroup){
     serviceSelect.addEventListener('change',function(){
       var isOther=serviceSelect.value==='Something Else';
-      serviceOtherGroup.hidden=!isOther;
+      serviceOtherGroup.style.display=isOther?'flex':'none';
       if(isOther){serviceOtherInput.focus();}
       else{serviceOtherInput.value='';}
     });
