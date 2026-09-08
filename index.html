@@ -662,7 +662,7 @@ footer{background:var(--card);border-top:1px solid var(--border-gold);padding:40
       </div>
     </div>
     <div class="ct-right">
-      <form class="ct-form" action="#" method="POST">
+      <form class="ct-form" action="https://formspree.io/f/xzebkayb" method="POST">
         <div class="frow">
           <div class="fg"><label class="flabel" for="fname">First Name</label><input class="fi" type="text" id="fname" name="fname" placeholder="John" autocomplete="given-name"></div>
           <div class="fg"><label class="flabel" for="lname">Last Name</label><input class="fi" type="text" id="lname" name="lname" placeholder="Smith" autocomplete="family-name"></div>
@@ -957,6 +957,7 @@ tabs.forEach(t=>t.addEventListener('click',()=>{
 .form-success-glyph{display:block;font-family:var(--font-display);font-size:2.5rem;color:var(--gold);margin-bottom:20px;line-height:1;animation:gold-pop .55s cubic-bezier(.16,1,.3,1) forwards}
 .form-success-h{font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--bone);margin-bottom:10px;letter-spacing:-.02em}
 .form-success-p{font-size:.95rem;line-height:1.75;color:rgba(240,237,230,.55);margin-bottom:32px}
+.form-error{margin-top:14px;font-size:.85rem;color:var(--signal)}
 @keyframes gold-pop{from{opacity:0;transform:scale(.5)}60%{transform:scale(1.2)}to{opacity:1;transform:scale(1)}}
 @media(prefers-reduced-motion:reduce){
   #scroll-prog{display:none}
@@ -1008,11 +1009,21 @@ tabs.forEach(t=>t.addEventListener('click',()=>{
     });
   });
 
-  /* Contact form success state */
+  /* Contact form submission */
   var form=document.querySelector('.ct-form');
   if(form){
-    form.addEventListener('submit',function(e){
-      e.preventDefault();
+    var submitBtn=form.querySelector('button[type="submit"]');
+    var submitLabel=submitBtn.innerHTML;
+    var errEl=null;
+    function showError(msg){
+      if(!errEl){
+        errEl=document.createElement('p');
+        errEl.className='form-error';
+        form.appendChild(errEl);
+      }
+      errEl.textContent=msg;
+    }
+    function showSuccess(){
       var wrap=form.parentNode;
       if(!rm){form.style.transition='opacity .25s ease';form.style.opacity='0';}
       setTimeout(function(){
@@ -1025,6 +1036,22 @@ tabs.forEach(t=>t.addEventListener('click',()=>{
           +'<a href="#work" class="btn btn-ghost">See the Work →</a>';
         wrap.appendChild(s);
       },rm?0:280);
+    }
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(errEl){errEl.remove();errEl=null;}
+      submitBtn.disabled=true;
+      submitBtn.innerHTML='Sending…';
+      fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+        .then(function(res){
+          if(res.ok){showSuccess();}
+          else{throw new Error('Request failed');}
+        })
+        .catch(function(){
+          submitBtn.disabled=false;
+          submitBtn.innerHTML=submitLabel;
+          showError('Something went wrong sending that — please email paul@paulyddesign.com directly.');
+        });
     });
   }
 
