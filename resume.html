@@ -93,6 +93,10 @@ a{text-decoration:none;color:inherit}
 
 /* Résumé header */
 #res-hero{padding:calc(var(--nav-h) + 64px) 32px 80px;position:relative;z-index:0;overflow:hidden;background:var(--dark-bg)}
+.scroll-hint{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(240,237,230,.2);font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;animation:bounce 2.5s ease-in-out infinite;z-index:2;transition:opacity .3s ease;pointer-events:none}
+.scroll-hint.is-hidden{opacity:0}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
+@media(prefers-reduced-motion:reduce){.scroll-hint{animation:none}}
 .res-hero-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:start;position:relative;z-index:2}
 .res-eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:12px}
 .res-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
@@ -100,7 +104,7 @@ a{text-decoration:none;color:inherit}
 .res-role{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,237,230,.45);margin-bottom:30px}
 .res-role span{color:rgba(201,168,76,.65);margin:0 10px}
 .res-summary{font-size:1.02rem;line-height:1.85;color:rgba(240,237,230,.68);max-width:600px;margin-bottom:36px}
-.res-actions{display:flex;gap:12px;flex-wrap:wrap}
+.res-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
 .res-contact-card{background:var(--card);border:1px solid var(--border-gold);padding:32px;display:flex;flex-direction:column;gap:18px}
 .rc-row{display:flex;align-items:center;gap:14px}
 .rc-icon{width:34px;height:34px;border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -250,11 +254,11 @@ footer{background:var(--card);border-top:1px solid var(--border-gold);padding:40
       <p class="res-eyebrow">Résumé</p>
       <h1 class="res-name">Paul Danowski</h1>
       <p class="res-role">Graphic Designer <span>&#9670;</span> Web Developer <span>&#9670;</span> Maker <span>&#9670;</span> Inventor</p>
-      <p class="res-summary">Designer, developer, and maker blending graphic design, front-end and back-end engineering, and hands-on fabrication to build brand identities, digital products, and objects that last. 15+ years turning concepts into things people can use, wear, and hang on their wall &mdash; from Villanova Athletics campaigns to a co-founded eyewear patent to hand-gilded glass signage. Inventor on U.S. Patent No. 12,353,062&nbsp;B2, holder of multiple certifications in modern web and software development.</p>
       <div class="res-actions">
         <a href="Paul-Danowski-Resume.pdf" class="btn btn-primary" target="_blank" rel="noopener">Download Résumé (PDF) <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 1v9M3 6l4 4 4-4M2 12h10"/></svg></a>
         <a href="index.html#work" class="btn btn-ghost">See My Work <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 7h12M8 2l5 5-5 5"/></svg></a>
       </div>
+      <p class="res-summary">Designer, developer, and maker blending graphic design, front-end and back-end engineering, and hands-on fabrication to build brand identities, digital products, and objects that last. 15+ years turning concepts into things people can use, wear, and hang on their wall &mdash; from Villanova Athletics campaigns to a co-founded eyewear patent to hand-gilded glass signage. Inventor on U.S. Patent No. 12,353,062&nbsp;B2, holder of multiple certifications in modern web and software development.</p>
     </div>
     <div class="res-contact-card">
       <div class="rc-row"><div class="rc-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l6 5 6-5M2 4h12v9H2z"/></svg></div><div><p class="rc-label">Email</p><p class="rc-val"><a href="mailto:paulyddesign@gmail.com">paulyddesign@gmail.com</a></p></div></div>
@@ -263,6 +267,10 @@ footer{background:var(--card);border-top:1px solid var(--border-gold);padding:40
       <div class="rc-row"><div class="rc-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="2" width="14" height="12" rx="1"/><path d="M1 5h14M5 2v3"/></svg></div><div><p class="rc-label">LinkedIn</p><p class="rc-val"><a href="https://linkedin.com/in/pauldanowski" target="_blank" rel="noopener">linkedin.com/in/pauldanowski</a></p></div></div>
       <div class="rc-row"><div class="rc-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1a7 7 0 00-2.2 13.6c.35.06.48-.15.48-.34v-1.2c-1.95.42-2.36-.94-2.36-.94-.32-.8-.78-1.02-.78-1.02-.64-.44.05-.43.05-.43.7.05 1.07.72 1.07.72.63 1.08 1.65.77 2.05.59.06-.46.24-.77.44-.95-1.56-.18-3.2-.78-3.2-3.47 0-.77.27-1.39.72-1.89-.07-.18-.31-.9.07-1.87 0 0 .59-.19 1.94.72a6.7 6.7 0 013.53 0c1.35-.91 1.94-.72 1.94-.72.38.97.14 1.69.07 1.87.45.5.72 1.12.72 1.89 0 2.7-1.64 3.29-3.21 3.47.25.22.48.65.48 1.3v1.93c0 .19.13.4.49.34A7 7 0 008 1z"/></svg></div><div><p class="rc-label">GitHub</p><p class="rc-val"><a href="https://github.com/pdan0727" target="_blank" rel="noopener">github.com/pdan0727</a></p></div></div>
     </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v10M3 8l5 5 5-5"/></svg>
+    Scroll
   </div>
 </section>
 
@@ -445,7 +453,11 @@ footer{background:var(--card);border-top:1px solid var(--border-gold);padding:40
 
 <script>
 const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40)},{passive:true});
+const scrollHint=document.querySelector('.scroll-hint');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>40);
+  if(scrollHint)scrollHint.classList.toggle('is-hidden',window.scrollY>40);
+},{passive:true});
 var navToggle=document.querySelector('.nav-toggle');
 var mobileNav=document.getElementById('mobileNav');
 if(navToggle&&mobileNav){
