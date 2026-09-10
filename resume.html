@@ -156,8 +156,9 @@ a{text-decoration:none;color:inherit}
 
 /* Education */
 .res-edu-grid{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px}
-.edu-col h3{font-family:var(--font-mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
-.edu-entry{padding:18px 0;border-bottom:1px solid var(--border-light);display:flex;flex-direction:column;gap:3px}
+.edu-col{column-count:2;column-gap:32px}
+.edu-col h3{font-family:var(--font-mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;column-span:all}
+.edu-entry{padding:18px 0;border-bottom:1px solid var(--border-light);display:flex;flex-direction:column;gap:3px;break-inside:avoid}
 .edu-entry:last-child{border-bottom:none}
 .edu-school{font-family:var(--font-display);font-size:1.1rem;color:var(--bone);font-weight:700}
 .edu-detail{font-size:.87rem;color:rgba(240,237,230,.45)}
@@ -189,6 +190,7 @@ footer{background:var(--card);border-top:1px solid var(--border-gold);padding:40
 .js-reveal[data-delay="4"]{transition-delay:.32s}
 
 @media(max-width:900px){
+  :root{--sp:80px 24px}
   .res-hero-inner{grid-template-columns:1fr;gap:40px}
   .res-skills-grid{grid-template-columns:1fr 1fr}
   .res-edu-grid{grid-template-columns:1fr;gap:40px}
@@ -197,6 +199,7 @@ footer{background:var(--card);border-top:1px solid var(--border-gold);padding:40
   :root{--sp:72px 20px}
   .res-skills-grid{grid-template-columns:1fr}
   .patent-inner{flex-direction:column;align-items:flex-start}
+  .edu-col{column-count:1}
 }
 @media(prefers-reduced-motion:reduce){.js-reveal{opacity:1;transform:none;transition:none}}
 </style>
@@ -293,22 +296,22 @@ footer{background:var(--card);border-top:1px solid var(--border-gold);padding:40
     </div>
     <div class="res-skill-cat js-reveal" data-delay="2">
       <h3>Back-End Development</h3>
-      <ul><li>Node.js</li><li>Express.js</li><li>REST APIs</li><li>Database Integration</li><li>Git / GitHub</li></ul>
+      <ul><li>Node.js</li><li>Express.js</li><li>REST APIs</li><li>Database Integration</li><li>Git / GitHub</li><li>DNS Management</li></ul>
     </div>
     <div class="res-skill-cat js-reveal" data-delay="3">
       <h3>Design &amp; Media</h3>
-      <ul><li>Graphic Design</li><li>Illustration</li><li>Photography</li><li>3D Rendering (Blender)</li><li>Photo &amp; Video Editing</li></ul>
+      <ul><li>Graphic Design</li><li>Illustration</li><li>Photography</li><li>3D Rendering (Blender)</li><li>Photo &amp; Video Editing</li><li>WordPress</li></ul>
     </div>
     <div class="res-skill-cat js-reveal" data-delay="4">
-      <h3>Craft &amp; Platforms</h3>
-      <ul><li>Reverse Glass Gilding</li><li>Gold Leaf Application</li><li>WordPress</li><li>DNS Management</li><li>Client Relations</li></ul>
+      <h3>Craft</h3>
+      <ul><li>Reverse Glass Gilding</li><li>Gold Leaf Application</li><li>Signage</li><li>3D Printing</li></ul>
     </div>
   </div>
 </section>
 
 <div style="padding:0 32px;background:var(--dark-bg)"><div class="divider container"><div class="divider-diamond"></div></div></div>
 
-<section class="res-section alt" aria-label="Professional Experience">
+<section class="res-section" aria-label="Professional Experience">
   <div class="res-hdr">
     <p class="eyebrow">Experience</p>
     <h2 class="res-title">Where I've Worked</h2>
@@ -366,7 +369,7 @@ footer{background:var(--card);border-top:1px solid var(--border-gold);padding:40
   </div>
 </section>
 
-<div style="padding:0 32px;background:var(--card)"><div class="divider container"><div class="divider-diamond"></div></div></div>
+<div style="padding:0 32px;background:var(--dark-bg)"><div class="divider container"><div class="divider-diamond"></div></div></div>
 
 <section class="res-section" aria-label="Education & Certifications">
   <div class="res-hdr">
@@ -396,11 +399,6 @@ footer{background:var(--card);border-top:1px solid var(--border-gold);padding:40
         <p class="edu-detail">Certificate, Building Interactive Websites</p>
         <p class="edu-when">2025</p>
       </div>
-      <div class="edu-entry">
-        <p class="edu-school">Camden County College</p>
-        <p class="edu-detail">Certificate, Web Design &mdash; Camden, NJ</p>
-        <p class="edu-when">2012 &ndash; 2014</p>
-      </div>
     </div>
     <div class="edu-col js-reveal" data-delay="2">
       <h3>Formal Education</h3>
@@ -413,6 +411,11 @@ footer{background:var(--card);border-top:1px solid var(--border-gold);padding:40
         <p class="edu-school">West Virginia University</p>
         <p class="edu-detail">B.S., Psychology &mdash; Morgantown, WV</p>
         <p class="edu-when">2000 &ndash; 2005</p>
+      </div>
+      <div class="edu-entry">
+        <p class="edu-school">Camden County College</p>
+        <p class="edu-detail">Certificate, Web Design &mdash; Camden, NJ</p>
+        <p class="edu-when">2012 &ndash; 2014</p>
       </div>
     </div>
   </div>
