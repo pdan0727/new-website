@@ -1,5 +1,6 @@
 .git
 .github
+.wrangler
 .gitignore
 .claude
 .agents
