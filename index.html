@@ -271,14 +271,12 @@ a{text-decoration:none;color:inherit}
 .tile-fill{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:.06;font-family:var(--font-display);color:var(--gold);pointer-events:none;user-select:none}
 #hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 45% at 75% 50%,rgba(201,168,76,.04) 0%,transparent 65%);pointer-events:none;z-index:0}
 @keyframes pd-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-@keyframes pd-wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0% 0 0)}}
 .hero-eyebrow{opacity:0;animation:pd-up 0.65s cubic-bezier(0.16,1,0.3,1) 0.08s forwards}
-.hero-headline{animation:pd-wipe 0.9s cubic-bezier(0.16,1,0.3,1) 0.24s both}
+.hero-headline{opacity:0;animation:pd-up 0.7s cubic-bezier(0.16,1,0.3,1) 0.24s forwards}
 .hero-tagline{opacity:0;animation:pd-up 0.6s cubic-bezier(0.16,1,0.3,1) 0.52s forwards}
 .hero-actions{opacity:0;animation:pd-up 0.6s cubic-bezier(0.16,1,0.3,1) 0.68s forwards}
 @media(prefers-reduced-motion:reduce){
-  .hero-eyebrow,.hero-tagline,.hero-actions{opacity:1!important;animation:none!important}
-  .hero-headline{animation:none!important;clip-path:none!important}
+  .hero-eyebrow,.hero-headline,.hero-tagline,.hero-actions{opacity:1!important;animation:none!important}
 }
 .scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(240,237,230,.2);font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;animation:bounce 2.5s ease-in-out infinite;z-index:2}
 @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
