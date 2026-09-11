@@ -1,0 +1,14 @@
+.git
+.github
+.gitignore
+.claude
+.agents
+.impeccable
+.DS_Store
+node_modules
+*.psd
+wrangler.toml
+.assetsignore
+CLAUDE.md
+PRODUCT.md
+skills-lock.json
