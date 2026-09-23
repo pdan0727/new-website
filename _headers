@@ -3,6 +3,10 @@
 # rename a file if you replace it and need the change live immediately.
 # HTML keeps Cloudflare's default (revalidate every time) so edits ship instantly.
 
+# Font files never change in place (new version = new filename), so cache for a year.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
 /img/*
   Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
 
