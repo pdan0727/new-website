@@ -11,3 +11,9 @@ Project notes for Claude Code sessions working in this repo. See `PRODUCT.md` fo
 - Keep future posts in the site's established voice: bold, honest, direct — "the work is the argument," no filler, no generic agency-speak (see `PRODUCT.md` → Brand Personality / Design Principles / Anti-references).
 - Post pages use `BlogPosting` JSON-LD (author/publisher reference the existing `#person` entity from `index.html`'s schema) — add the same block to future posts.
 - To add a new post: create `blog/<slug>.html` (copy the existing post as a template), add a `post-card` entry to `blog/index.html`.
+
+## URLs & caching
+
+- Cloudflare serves pages at extensionless URLs (`/resume`, `/blog/`, `/work/magni-frames`) and 307-redirects `*.html` / `index.html` to them. **Always link, canonicalize and sitemap the clean form** -- never `foo.html` or `index.html` -- or every click pays a redirect.
+- `404.html` is served at arbitrary paths, so its links must be root-absolute (`/`, `/resume`).
+- Asset cache lifetimes live in `_headers`. Filenames aren't hashed, so if you replace an image in place, rename it (or it may stay cached up to 30 days).

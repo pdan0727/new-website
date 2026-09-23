@@ -1,0 +1,19 @@
+# Cloudflare static-asset response headers.
+# Filenames aren't content-hashed, so assets get 30 days (not "immutable") --
+# rename a file if you replace it and need the change live immediately.
+# HTML keeps Cloudflare's default (revalidate every time) so edits ship instantly.
+
+/img/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+/logo.svg
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+/og-image.jpg
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+/alpSite.png
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+/Paul-Danowski-Resume.pdf
+  Cache-Control: public, max-age=86400
