@@ -130,6 +130,9 @@ img{display:block;max-width:100%;height:auto}
   .spec-list li{grid-template-columns:1fr;gap:4px}
   .shop-end{height:80px}
 }
+.lightbox-overlay{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.92);align-items:center;justify-content:center;cursor:zoom-out;padding:40px}
+.lightbox-overlay.active{display:flex}
+.lightbox-overlay img{max-width:90vw;max-height:90vh;object-fit:contain}
 </style>
 </head>
 <body>
@@ -200,17 +203,17 @@ img{display:block;max-width:100%;height:auto}
 
 <article class="product sold" id="hatchet" aria-labelledby="hatchet-product">
 <div class="product-gallery pair">
-<figure><img src="img/restored-hatchet-hand-shaped-wood-handle-paracord.webp" alt="Restored hatchet with a hand-shaped wooden grip, pinned through, and a green paracord wrap below the head" width="800" height="1067" loading="lazy"><span class="sold-badge">Sold</span><figcaption>After</figcaption></figure>
-<figure><img src="img/restored-hatchet-before-rusted-steel-handle.webp" alt="The same hatchet before restoration: a pitted steel head on a bare, rusted steel handle" width="800" height="1067" loading="lazy"><figcaption>Before</figcaption></figure>
+<figure><img src="img/restored-hatchet-before-restoration.webp" alt="The hatchet before restoration: a worn steel head on a bare, rusted steel handle" width="800" height="999" loading="lazy"><figcaption>Before</figcaption></figure>
+<figure><img src="img/restored-hatchet-hand-shaped-wood-handle-paracord.webp" alt="Restored hatchet with a blued, patinaed head, a green paracord wrap below it, and a hand-shaped walnut handle" width="800" height="1067" loading="lazy"><span class="sold-badge">Sold</span><figcaption>After</figcaption></figure>
 </div>
 <div class="product-info">
 <p class="product-kicker">One of One &middot; Restoration</p>
 <h2 class="product-name" id="hatchet-product">Restored Vintage Hatchet</h2>
 <p class="product-price"><small>Sold</small>$300</p>
-<p>It came in as a pitted head on a bare, rusted steel handle. It left as a tool you&rsquo;d actually want to pick up: the steel cleaned up, the throat wrapped tight in paracord, and a new wooden grip shaped with finger grooves and pinned through.</p>
+<p>It came in as a pitted head on a bare, rusted steel handle. It left as a tool you&rsquo;d actually want to pick up: the blade blued with its old patina left showing through, the throat wrapped tight in paracord, and a new handle shaped by hand from solid local walnut.</p>
 <ul class="spec-list">
-<li><span class="spec-label">Head</span><span>Original steel, cleaned and refinished</span></li>
-<li><span class="spec-label">Grip</span><span>Hand-shaped wood with finger grooves, pinned</span></li>
+<li><span class="spec-label">Head</span><span>Original steel, blued, with the patina kept for character</span></li>
+<li><span class="spec-label">Handle</span><span>100% local walnut, hand-shaped with finger grooves</span></li>
 <li><span class="spec-label">Wrap</span><span>Paracord at the throat</span></li>
 </ul>
 <p class="product-note">This one has found its owner. Got an old tool worth bringing back? <a href="./#contact" style="color:var(--gold)">Get in touch.</a></p>
@@ -249,6 +252,25 @@ if(navToggle&&mobileNav){
   });});
 }
 })();
+</script>
+<div class="lightbox-overlay" id="lightbox">
+  <img id="lightbox-img" src="" alt="">
+</div>
+<script>
+document.querySelectorAll('.product-gallery img').forEach(img => {
+  img.style.cursor = 'zoom-in';
+  img.addEventListener('click', () => {
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox-img').alt = img.alt;
+    document.getElementById('lightbox').classList.add('active');
+  });
+});
+document.getElementById('lightbox').addEventListener('click', () => {
+  document.getElementById('lightbox').classList.remove('active');
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+});
 </script>
 </body>
 </html>
