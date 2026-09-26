@@ -97,6 +97,11 @@ img{display:block;max-width:100%;height:auto}
 .product-name{font-family:var(--font-display);font-weight:700;font-size:clamp(1.4rem,2.6vw,1.8rem);color:var(--bone);line-height:1.2;margin-bottom:12px}
 .product-info .product-price{display:flex;align-items:baseline;gap:10px;font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--gold);line-height:1;margin:4px 0 24px}
 .product-price small{font-family:var(--font-mono);font-size:.62rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-dim)}
+.product+.product{margin-top:32px}
+.product-gallery.pair figure:first-child{grid-column:auto}
+.product-gallery.pair img,.product-gallery.pair figure:first-child img{aspect-ratio:3/4}
+.product.sold .product-price{color:var(--bone-dim)}
+.sold-badge{position:absolute;top:10px;left:10px;padding:5px 10px;background:var(--gold);color:var(--bg);font-family:var(--font-mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;border-radius:2px}
 .product-info p{font-size:.95rem;color:var(--bone-dim);line-height:1.8}
 .product-info p+p{margin-top:1em}
 .spec-list{list-style:none;margin:24px 0;border-top:1px solid var(--border)}
@@ -190,6 +195,25 @@ img{display:block;max-width:100%;height:auto}
 <p class="product-note">The signs shown are examples of the technique. Your commission carries your name, not a brand&rsquo;s.</p>
 <!-- TODO: swap href for the Stripe deposit Payment Link once the account is verified -->
 <a href="./#contact" class="btn btn-primary">Start a Commission <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 7h12M8 2l5 5-5 5"/></svg></a>
+</div>
+</article>
+
+<article class="product sold" id="hatchet" aria-labelledby="hatchet-product">
+<div class="product-gallery pair">
+<figure><img src="img/restored-hatchet-hand-shaped-wood-handle-paracord.webp" alt="Restored hatchet with a hand-shaped wooden grip, pinned through, and a green paracord wrap below the head" width="800" height="1067" loading="lazy"><span class="sold-badge">Sold</span><figcaption>After</figcaption></figure>
+<figure><img src="img/restored-hatchet-before-rusted-steel-handle.webp" alt="The same hatchet before restoration: a pitted steel head on a bare, rusted steel handle" width="800" height="1067" loading="lazy"><figcaption>Before</figcaption></figure>
+</div>
+<div class="product-info">
+<p class="product-kicker">One of One &middot; Restoration</p>
+<h2 class="product-name" id="hatchet-product">Restored Vintage Hatchet</h2>
+<p class="product-price"><small>Sold</small>$300</p>
+<p>It came in as a pitted head on a bare, rusted steel handle. It left as a tool you&rsquo;d actually want to pick up: the steel cleaned up, the throat wrapped tight in paracord, and a new wooden grip shaped with finger grooves and pinned through.</p>
+<ul class="spec-list">
+<li><span class="spec-label">Head</span><span>Original steel, cleaned and refinished</span></li>
+<li><span class="spec-label">Grip</span><span>Hand-shaped wood with finger grooves, pinned</span></li>
+<li><span class="spec-label">Wrap</span><span>Paracord at the throat</span></li>
+</ul>
+<p class="product-note">This one has found its owner. Got an old tool worth bringing back? <a href="./#contact" style="color:var(--gold)">Get in touch.</a></p>
 </div>
 </article>
 <p class="shop-more">More coming soon</p>
